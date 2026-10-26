@@ -7,7 +7,7 @@ This project demonstrates an interactive AI assistant for earth observation, to 
 - **Remote Sensing Data Retrieval**: Calling the Sentinel Hub Catalog API to retrieve Sentinel-2 L2A data at 10 m resolution (20 m bands are scaled up to 10 m) from the Copernicus Data Space Ecosystem and additionally Element84's Earth Search as the public fallback. Image scenes are then chosen by the agent using cloud cover, coverage and closeness to the event the user has requested.
 - **Natural Disaster Search**: Utilizing ESA EVE's `gdacs` tool to find current and recent natural disasters registered in the Global Disaster Alert and Coordination System. For historical search, NASA's EONET archives are additionally used.
 - **Quicklook**: Utilizing ESA EVE's `cdse` tool to get quick preview images from Sentinel-2 (L2A) and Sentinel-1.
-- **Analysis Tools**: Various spectral analysis methods the agent can pick as tools to estimate:
+- **Analysis Tools**: Implementation of various spectral analysis methods the agent can pick to estimate:
     - Burn severity (e.g., caused by wildfire)
     - Vegetation loss (wildfire, drought, land degradation)
     - Water shrinking (drought impact on lakes, reservoirs and rivers)
