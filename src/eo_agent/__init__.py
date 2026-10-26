@@ -1,0 +1,1 @@
+"""EO disaster-monitoring agent."""

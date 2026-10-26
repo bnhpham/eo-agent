@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eo-agent"
+version = "0.1.0"
+description = "AI agent for natural disaster monitoring with Sentinel imagery, MCP tools and pretrained segmentation models"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai-agents>=0.24,<0.25",
+    "fastmcp>=3.4,<4",
+    "mcp>=1.27,<2",
+    "pydantic>=2.12",
+    "pydantic-settings>=2.6",
+    "python-dotenv>=1.0",
+    "httpx>=0.28,<1",
+    "requests>=2.31",
+    "numpy>=2.2",
+    "rasterio>=1.4",
+    "xarray>=2024.10",
+    "rioxarray>=0.17",
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pyproj>=3.6",
+    "pystac-client>=0.8",
+    "Pillow>=10.0",
+    "huggingface_hub>=0.26",
+    "terratorch>=1.2",
+    "streamlit>=1.40",
+    "folium>=0.18",
+    "streamlit-folium>=0.24",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.24"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = [
+    "requires_weights: needs downloaded model checkpoints (scripts/download_models.py)",
+    "slow: long-running tests",
+]
